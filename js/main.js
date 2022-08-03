@@ -1,5 +1,6 @@
 var $filmsList = document.querySelector('#films-list');
 var $detailsInfo = document.querySelector('#details-page');
+var $list = document.querySelector('#list2');
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://ghibliapi.herokuapp.com/films');
@@ -22,7 +23,7 @@ xhr.addEventListener('load', function () {
     $divP.setAttribute('class', 'container-green');
     $filmTitle.setAttribute('class', 'text-p');
     $img.setAttribute('data-film-index', i);
-    $img.setAttribute('class', 'film-img');
+    $img.setAttribute('id', 'film-img');
     $filmsList.addEventListener('click', handleImg);
   }
 });
@@ -33,7 +34,7 @@ var $filmInfo = document.querySelector('.film-info');
 
 function handleImg(event) {
   if (event.target.tagName === 'IMG') {
-    $filmsList.className = 'hidden';
+    $list.className = 'hidden';
     $detailsInfo.className = '';
     var filmId = event.target.getAttribute('data-film-index');
     var filmInfoTree = createDetailsPage(data.films[filmId]);
@@ -46,23 +47,21 @@ function removeChildNodes(parent) {
     parent.removeChildNodes(parent.firstChild);
   }
 }
+
 function createDetailsPage(film) {
   var $detailsContainer = document.createElement('div');
   var titleMovie = document.createElement('h2');
-  titleMovie.textContent = film.title + ' ' + film.original_title;
+  titleMovie.textContent = film.title + ' ' + '(' + film.original_title + ')';
+  titleMovie.setAttribute('class', 'row');
   $detailsContainer.appendChild(titleMovie);
 
   var $ImgInfo = document.createElement('img');
   $ImgInfo.setAttribute('src', film.movie_banner);
-  $detailsContainer.appendChild($ImgInfo);
-
-  var $pEelement = document.createElement('p');
-  $pEelement.textContent = film.description;
-  $detailsContainer.appendChild($pEelement);
+  $ImgInfo.setAttribute('id', 'film-banner');
+  $ImgInfo.setAttribute('class', 'column-two-thirds padding-between');
 
   var $box = document.createElement('div');
-  $box.setAttribute('class', 'info-box');
-  $detailsContainer.appendChild($box);
+  $box.setAttribute('class', 'detail-box');
 
   var $ulElement = document.createElement('ul');
   $detailsContainer.appendChild($ulElement);
@@ -83,6 +82,19 @@ function createDetailsPage(film) {
   $liElement4.textContent = 'Running Time: ' + film.running_time + ' min';
   $ulElement.appendChild($liElement4);
 
+  $box.appendChild($ulElement);
+
+  var $divImgP = document.createElement('div');
+  $divImgP.setAttribute('class', 'row justify-content');
+  $divImgP.appendChild($ImgInfo);
+  $divImgP.appendChild($box);
+  $detailsContainer.appendChild($divImgP);
+
+  var $pEelement = document.createElement('p');
+  $pEelement.textContent = film.description;
+  $detailsContainer.appendChild($pEelement);
+  $pEelement.setAttribute('class', 'taviraj row');
+
   return $detailsContainer;
 }
 
@@ -91,7 +103,7 @@ $back.addEventListener('click', returnList);
 
 function returnList(event) {
   $detailsInfo.className = 'hidden';
-  $filmsList.className = 'data-film-index';
+  $list.className = '';
 
   if (event.target) {
     removeChildNodes($filmInfo);
