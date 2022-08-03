@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="list hidden">
+  <div id="list" class="">
     <header>
       <div class="container-header">
         <div class="column-full padding-top">
@@ -31,13 +34,25 @@
     </header>
     <main>
       <div class="container">
-        <div data-view="list">
+        <div data-view="list" class="" id="list2">
           <div class="row text-center">
             <div class="column-full text-center">
-              <div class="films-list">
+              <div id="films-list" class="">
 
               </div>
             </div>
+          </div>
+        </div>
+        <div class="hidden" data-view="details-page" id="details-page">
+          <div class="row justify-content-details">
+            <div class="column-full">
+              <div class="film-info">
+
+              </div>
+            </div>
+          </div>
+          <div class="button-details-page row">
+            <button class="back">BACK</button>
           </div>
         </div>
       </div>

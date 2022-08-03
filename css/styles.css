@@ -20,10 +20,6 @@ a {
   color: white;
 }
 
-.justify-content {
-  justify-content: space-between;
-}
-
 .align-items {
   align-items: center;
 }
@@ -32,7 +28,7 @@ a {
   text-align: center;
 }
 
-.films-list {
+#films-list {
   display: flex;
   flex-wrap: wrap;
 }
@@ -48,4 +44,43 @@ a {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-weight: bolder;
+}
+
+h2 {
+  background-color: #6e9553;
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.taviraj {
+  font-family: Taviraj, serif;
+  text-align: justify;
+}
+
+li {
+  font-family: Quicksand, sans-serif;
+}
+
+.detail-box {
+  background-color: #405880;
+  color: white;
+  font-weight: 100;
+  margin-top: 2rem;
+}
+
+ul {
+  list-style: none;
+  line-height: 1.5rem;
+  padding-left: 1rem;
+}
+
+.back {
+  border: none;
+  background-color: #405880;
+  color: white;
+  font-family: Quicksand, sans-serif;
+}
+
+#film-banner {
+  border-radius: 0;
 }
