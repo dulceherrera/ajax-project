@@ -157,6 +157,7 @@ h2 {
     border-radius: 10px;
     justify-content: left;
     font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .column-two-thirds {
@@ -192,10 +193,6 @@ h2 {
   .back {
     width: 10%;
     height: 1.8rem;
-  }
-
-  .justify-content {
-    margin-top: 2rem;
   }
 
   .taviraj {
