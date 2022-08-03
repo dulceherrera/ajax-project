@@ -1,6 +1,12 @@
 var $filmsList = document.querySelector('#films-list');
 var $detailsInfo = document.querySelector('#details-page');
 var $list = document.querySelector('#list2');
+var $reviewPage = document.querySelector('#review-page');
+var $reviewTab = document.querySelector('#tab-reviews');
+var $reviewsList = document.querySelector('#reviews-list');
+var $noReviews = document.querySelector('.no-reviews');
+var $newReview = document.querySelector('#add-review');
+var $addReviewButton = document.querySelector('#submit-review-button');
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', 'https://ghibliapi.herokuapp.com/films');
@@ -25,6 +31,7 @@ xhr.addEventListener('load', function () {
     $img.setAttribute('data-film-index', i);
     $img.setAttribute('id', 'film-img');
     $filmsList.addEventListener('click', handleImg);
+    $addReviewButton.addEventListener('click', reviewButton);
   }
 });
 
@@ -36,6 +43,8 @@ function handleImg(event) {
   if (event.target.tagName === 'IMG') {
     $list.className = 'hidden';
     $detailsInfo.className = '';
+    $reviewPage.className = 'hidden';
+
     var filmId = event.target.getAttribute('data-film-index');
     var filmInfoTree = createDetailsPage(data.films[filmId]);
     $filmInfo.appendChild(filmInfoTree);
@@ -53,6 +62,7 @@ function createDetailsPage(film) {
   var titleMovie = document.createElement('h2');
   titleMovie.textContent = film.title + ' ' + '(' + film.original_title + ')';
   titleMovie.setAttribute('class', 'row');
+  titleMovie.setAttribute('id', 'film-title');
   $detailsContainer.appendChild(titleMovie);
 
   var $ImgInfo = document.createElement('img');
@@ -104,8 +114,58 @@ $back.addEventListener('click', returnList);
 function returnList(event) {
   $detailsInfo.className = 'hidden';
   $list.className = '';
+  $reviewPage = 'hidden';
 
   if (event.target) {
     removeChildNodes($filmInfo);
   }
+}
+
+var $StudioGhlibiTab = document.querySelector('#studios-ghibli-tab');
+$StudioGhlibiTab.addEventListener('click', function (event) {
+  $filmsList.className = '';
+  $detailsInfo = 'hidden';
+  $reviewPage = 'hidden';
+
+  if (event.target) {
+    removeChildNodes($filmInfo);
+  }
+});
+
+$reviewTab.addEventListener('click', function (event) {
+  $filmsList.className = 'hidden';
+  $detailsInfo.className = 'hidden';
+
+  if (data.reviews !== 0) {
+    data.view = 'review-list';
+    $reviewPage.className = '';
+    $newReview.className = 'hidden';
+    $reviewsList.className = '';
+    $noReviews.className = 'text-center hidden';
+
+  } else {
+    $reviewsList.className = '';
+    $noReviews.className = '';
+    $reviewPage.className = '';
+    $newReview.className = 'hidden';
+  }
+
+  if (event.target) {
+    removeChildNodes($filmInfo);
+  }
+});
+
+function reviewButton(event) {
+  $noReviews.classList.add('hidden');
+  $newReview.className = '';
+  $reviewPage.className = '';
+  $reviewsList.className = 'hidden';
+  $filmsList.className = 'hidden';
+  $detailsInfo.className = 'hidden';
+
+  var $reviewFilm = document.querySelector('.review-film');
+  var $reviewImg = document.querySelector('.review-img');
+
+  $reviewFilm.textContent = document.querySelector('#film-title').textContent;
+  $reviewImg.setAttribute('src', document.querySelector('#film-banner').src);
 }
