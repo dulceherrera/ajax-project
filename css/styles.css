@@ -131,3 +131,10 @@ h1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
 }
+
+#edit-button {
+  font-family: Quicksand, sans-serif;
+  color: white;
+  background-color: #405880;
+  border: none;
+}
