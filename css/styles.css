@@ -81,6 +81,53 @@ ul {
   font-family: Quicksand, sans-serif;
 }
 
-#film-banner {
-  border-radius: 0;
+textarea {
+  width: 100%;
+  border: solid 3px black;
+  font-family: Taviraj, serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+#submit-review-button {
+  background-color: #405880;
+  color: white;
+  border: none;
+  width: 5rem;
+  height: 1.5rem;
+  font-family: Quicksand, sans-serif;
+}
+
+h1 {
+  font-family: Quicksand, sans-serif;
+  justify-content: center;
+}
+
+#p-reviews {
+  font-family: Taviraj, serif;
+  margin-top: 0;
+}
+
+#h2-reviews {
+  background-color: none;
+}
+
+.marginli {
+  margin-bottom: 4rem;
+}
+
+.button-details-page {
+  justify-content: space-between;
+}
+
+.add-review-button {
+  background-color: #405880;
+  color: white;
+  border: none;
+  font-family: Quicksand, sans-serif;
+}
+
+.h1-no-reviews {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
 }

@@ -97,6 +97,26 @@ h2 {
   margin: auto;
 }
 
+.add-review-button {
+  width: 35%;
+  font-size: 0.7rem;
+  font-weight: lighter;
+}
+
+.back {
+  width: 20%;
+}
+
+.h1-no-reviews {
+  font-size: larger;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.totoro-sad {
+  width: 60%;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 100vw;
@@ -191,13 +211,69 @@ h2 {
   }
 
   .back {
-    width: 10%;
+    width: 13%;
     height: 1.8rem;
+    font-size: 0.8rem;
   }
 
   .taviraj {
     font-size: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .review-img {
+    height: 20rem;
+    margin-bottom: 1rem;
+  }
+
+  #add-review {
+    width: 100%;
+  }
+
+  #margin-bottom-h2 {
+    margin-bottom: 1.5rem;
+    height: 4rem !important;
+  }
+
+  #h2-reviews {
+    height: 2rem;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .add-review-button {
+    width: 20%;
+    font-size: 0.8rem;
+  }
+
+  #reviews-list {
+    width: 60%;
+    margin: auto;
+  }
+
+  .align-button {
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+  }
+
+  #p-reviews {
+    font-family: Taviraj, serif;
+    margin-top: 0;
+  }
+
+  #film-banner {
+    border-radius: 0;
+  }
+
+  .h1-no-reviews {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    font-size: xx-large;
+  }
+
+  .totoro-sad {
+    width: 40%;
   }
 }
 
@@ -211,4 +287,48 @@ h2 {
 
 ul {
   font-size: 0.8rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+#margin-bottom-h2 {
+  height: 2rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.review-img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+
+.align-button {
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+#film-banner {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#p-reviews {
+  font-size: 1rem;
+}
+
+#h2-reviews {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  justify-content: center;
+}
+
+.banner-width {
+  width: 100%;
 }

@@ -14,6 +14,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@200&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="list" class="">
@@ -43,7 +45,7 @@
             </div>
           </div>
         </div>
-        <div class="hidden" data-view="details-page" id="details-page">
+        <div class="" data-view="details-page" id="details-page">
           <div class="row justify-content-details">
             <div class="column-full">
               <div class="film-info">
@@ -57,17 +59,14 @@
           </div>
         </div>
         <div id="review-page" data-view="review-page" class="hidden">
-          <div class="row">
-            <div class="no-reviews text-center">
-              <h3>NO REVIEWS YET</h3>
-              <img src="./images/totoro-sad.png" alt="totoro-sad" class="totoro-sad">
-            </div>
+          <div class="row justify-content-center">
             <div id="add-review" class="">
               <div class="column-full">
-                <form>
-                  <h2 class="review-film"></h2>
-                  <textarea class="review-text" rows="20" cols="80">Write your review...</textarea>
-                  <div class="align-button">
+                <form class="justify-content-details">
+                  <h2 class="review-film row" id="margin-bottom-h2"></h2>
+                  <img class="review-img" src="">
+                  <textarea class="review-text" rows="3" placeholder="Write your review..."></textarea>
+                  <div class="align-button row">
                     <button id="submit-review-button" type="submit">SUBMIT</button>
                   </div>
                 </form>
@@ -76,12 +75,16 @@
             <div class="" data-view="review-list" id="reviews-list" >
               <div class="row">
                 <div class="column-full">
-                  <h2>REVIEWS</h2>
+                  <h1 class="row">REVIEWS</h1>
                   <ul class="your-reviews-list">
 
                   </ul>
                 </div>
               </div>
+            </div>
+            <div class="no-reviews text-center">
+              <h1 class="h1-no-reviews">NO REVIEWS YET</h1>
+              <img src="./images/totoro-sad.png" alt="totoro-sad" class="totoro-sad">
             </div>
           </div>
         </div>
