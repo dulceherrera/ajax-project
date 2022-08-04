@@ -15,5 +15,4 @@ if (previousData !== null) {
 window.addEventListener('beforeunload', function (event) {
   var reviewsJSON = JSON.stringify(data);
   localStorage.setItem('studios-ghibli-tab', reviewsJSON);
-  this.localStorage.clear();
 });
