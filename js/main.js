@@ -208,7 +208,7 @@ function submitReview(event) {
     }
     var reviewItem = document.querySelectorAll('#review-item');
     for (i = 0; i < reviewItem.length; i++) {
-      var reviewItemId = JSON.parse(reviewItem[i].getAttribute('data-review-id'));
+      var reviewItemId = parseInt(reviewItem[i].getAttribute('data-review-id'));
       if (reviewItemId === data.editing.reviewId) {
         reviewItem[i].replaceWith(createReviewList(review));
       }
@@ -276,7 +276,7 @@ $yourReviewsList.addEventListener('click', function (event) {
     var $liClosest = event.target.closest('li');
     var $reviewsId = $liClosest.getAttribute('data-review-id');
 
-    $reviewsId = JSON.parse($reviewsId);
+    $reviewsId = parseInt($reviewsId);
     for (var i = 0; i < data.reviews.length; i++) {
       if (data.reviews[i].reviewId === $reviewsId) {
         data.editing = data.reviews[i];
