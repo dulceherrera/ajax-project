@@ -182,17 +182,40 @@ $form.addEventListener('submit', submitReview);
 function submitReview(event) {
   event.preventDefault();
   var review = {};
-  review = {
-    title: document.querySelector('#film-title').textContent,
-    img: document.querySelector('#film-banner').src,
-    textReview: $form.elements[0].value,
-    reviewId: data.nextReviewId
-  };
+  if (data.editing === null) {
+    review = {
+      title: document.querySelector('#film-title').textContent,
+      img: document.querySelector('#film-banner').src,
+      textReview: $form.elements[0].value,
+      reviewId: data.nextReviewId
+    };
 
-  data.nextReviewId++;
-  data.reviews.unshift(review);
-  $ulElement2.prepend(createReviewList(review));
-  $form.reset();
+    data.nextReviewId++;
+    data.reviews.unshift(review);
+    $ulElement2.prepend(createReviewList(review));
+    $form.reset();
+
+  } else if (data.editing !== null) {
+    review.title = document.querySelector('#film-title').textContent;
+    review.img = document.querySelector('#film-banner').src;
+    review.textReview = $form.elements[0].value;
+    review.reviewId = data.editing.reviewId;
+
+    for (var i = 0; i < data.reviews.length; i++) {
+      if (data.reviews[i].reviewId === review.reviewId) {
+        data.reviews[i] = review;
+      }
+    }
+    var reviewItem = document.querySelectorAll('#review-item');
+    for (i = 0; i < reviewItem.length; i++) {
+      var reviewItemId = JSON.parse(reviewItem[i].getAttribute('data-review-id'));
+      if (reviewItemId === data.editing.reviewId) {
+        reviewItem[i].replaceWith(createReviewList(review));
+      }
+    }
+    data.editing = null;
+    $form.reset();
+  }
 
   $list.className = 'hidden';
   $reviewsList.className = '';
@@ -207,11 +230,12 @@ function createReviewList(review) {
   var $liElement = document.createElement('li');
   $liElement.setAttribute('data-review-id', review.reviewId);
   $liElement.setAttribute('class', 'marginli');
+  $liElement.setAttribute('id', 'review-item');
 
   var $titleElement = document.createElement('h2');
   $titleElement.textContent = review.title;
   $titleElement.setAttribute('class', 'row');
-  $titleElement.setAttribute('id', 'h2-reviews');
+  $titleElement.setAttribute('id', 'h2-reviews film-title');
   $liElement.appendChild($titleElement);
 
   var $ImgElement = document.createElement('img');
@@ -223,7 +247,17 @@ function createReviewList(review) {
   var $pElement = document.createElement('p');
   $pElement.textContent = review.textReview;
   $pElement.setAttribute('id', 'p-reviews');
-  $liElement.appendChild($pElement);
+
+  var divElement = document.createElement('div');
+  divElement.setAttribute('class', 'align-edit-button row');
+  $liElement.appendChild(divElement);
+
+  divElement.appendChild($pElement);
+
+  var $editButton = document.createElement('button');
+  $editButton.setAttribute('id', 'edit-button');
+  $editButton.textContent = 'EDIT REVIEW';
+  divElement.appendChild($editButton);
 
   return $liElement;
 }
@@ -234,5 +268,31 @@ document.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.reviews.length; i++) {
     var reviewResult = createReviewList(data.reviews[i]);
     $yourReviewsList.appendChild(reviewResult);
+  }
+});
+
+$yourReviewsList.addEventListener('click', function (event) {
+  if (event.target && event.target.matches('BUTTON')) {
+    var $liClosest = event.target.closest('li');
+    var $reviewsId = $liClosest.getAttribute('data-review-id');
+
+    $reviewsId = JSON.parse($reviewsId);
+    for (var i = 0; i < data.reviews.length; i++) {
+      if (data.reviews[i].reviewId === $reviewsId) {
+        data.editing = data.reviews[i];
+      }
+    }
+
+    document.querySelector('.review-film').textContent = data.editing.title;
+    document.querySelector('.review-img').src = data.editing.img;
+    $form.elements[0].value = data.editing.textReview;
+
+    $reviewPage.className = '';
+    $detailsInfo.className = 'hidden';
+    $noReviews.classList.add('hidden');
+    $reviewsList.className = 'hidden';
+    $newReview.className = '';
+    $filmsList.className = 'hidden';
+
   }
 });
