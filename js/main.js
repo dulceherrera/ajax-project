@@ -131,7 +131,9 @@ $StudioGhlibiTab.addEventListener('click', function (event) {
 var $reviewTab = document.querySelector('#tab-reviews');
 var $reviewsList = document.querySelector('#reviews-list');
 
-$reviewTab.addEventListener('click', function (event) {
+$reviewTab.addEventListener('click', reviewTabClick);
+
+function reviewTabClick(event) {
   $list.className = 'hidden';
   $detailsInfo.className = 'hidden';
 
@@ -153,7 +155,7 @@ $reviewTab.addEventListener('click', function (event) {
   if (event.target) {
     removeChildNodes($filmInfo);
   }
-});
+}
 
 var $noReviews = document.querySelector('.no-reviews');
 var $newReview = document.querySelector('#add-review');
@@ -166,6 +168,7 @@ function reviewButton(event) {
   $reviewsList.className = 'hidden';
   $list.className = 'hidden';
   $detailsInfo.className = 'hidden';
+  $deleteButton.className = 'visibility-hidden';
 
   var $reviewFilm = document.querySelector('.review-film');
   var $reviewImg = document.querySelector('.review-img');
@@ -230,7 +233,7 @@ function createReviewList(review) {
   var $liElement = document.createElement('li');
   $liElement.setAttribute('data-review-id', review.reviewId);
   $liElement.setAttribute('class', 'marginli');
-  $liElement.setAttribute('id', 'review-item');
+  $liElement.setAttribute('class', 'review-item');
 
   var $titleElement = document.createElement('h2');
   $titleElement.textContent = review.title;
@@ -255,7 +258,8 @@ function createReviewList(review) {
   divElement.appendChild($pElement);
 
   var $editButton = document.createElement('button');
-  $editButton.setAttribute('id', 'edit-button');
+  $editButton.setAttribute('class', 'edit-button');
+  $editButton.setAttribute('type', 'button');
   $editButton.textContent = 'EDIT REVIEW';
   divElement.appendChild($editButton);
 
@@ -271,8 +275,11 @@ document.addEventListener('DOMContentLoaded', function (event) {
   }
 });
 
-$yourReviewsList.addEventListener('click', function (event) {
-  if (event.target && event.target.matches('BUTTON')) {
+$yourReviewsList.addEventListener('click', handleEditButton);
+
+function handleEditButton(event) {
+  if (event.target.matches('.edit-button')) {
+    $deleteButton.className = '';
     var $liClosest = event.target.closest('li');
     var $reviewsId = $liClosest.getAttribute('data-review-id');
 
@@ -295,4 +302,41 @@ $yourReviewsList.addEventListener('click', function (event) {
     $filmsList.className = 'hidden';
 
   }
+}
+
+var $deleteButton = document.querySelector('#delete-button');
+var $modal = document.querySelector('#modal');
+
+$deleteButton.addEventListener('click', showModal);
+
+function showModal(event) {
+  $modal.className = 'dark-modal';
+}
+
+var $cancelButton = document.querySelector('#cancel-button');
+$cancelButton.addEventListener('click', function (event) {
+  $modal.className = 'hidden';
 });
+
+var $confirmButton = document.querySelector('#confirm-button');
+$confirmButton.addEventListener('click', confirmDelete);
+
+function confirmDelete(event) {
+  var reviewItem = document.querySelectorAll('.review-item');
+  for (var i = 0; i < data.reviews.length; i++) {
+    if (data.reviews[i].reviewId === data.editing.reviewId) {
+      data.reviews.splice(i, 1);
+    }
+
+    var $reviewIdInt = parseInt(reviewItem[i].getAttribute('data-review-id'));
+    if ($reviewIdInt === data.editing.reviewId) {
+      reviewItem[i].remove();
+    }
+  }
+
+  data.editing = null;
+  data.view = 'list';
+  $modal.className = 'dark-modal hidden';
+  $form.reset();
+  reviewTabClick(event);
+}

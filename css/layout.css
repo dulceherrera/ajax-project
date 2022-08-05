@@ -127,7 +127,7 @@ h2 {
   justify-content: space-between;
 }
 
-#edit-button {
+.edit-button {
   width: 23%;
   height: 1.9rem;
   font-size: 0.7rem;
@@ -136,6 +136,37 @@ h2 {
 #p-reviews {
   font-size: 1rem;
   max-width: 70%;
+}
+
+#delete-button {
+  background-color: #f41b0d;
+  width: 5rem;
+}
+
+.baseline {
+  margin-top: 1rem;
+}
+
+#confirm-modal {
+  width: 80%;
+  height: 120px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+}
+
+#text-confirm {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+#confirm-button,
+#cancel-button {
+  width: 30%;
+  height: 1.6rem;
+  margin: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -298,10 +329,42 @@ h2 {
     width: 40%;
   }
 
-  #edit-button {
+  .edit-button {
     width: 24%;
     height: 1.9rem;
     font-size: 0.7rem;
+  }
+
+  #delete-button {
+    background-color: #405880;
+    width: 5rem;
+  }
+
+  #confirm-button {
+    width: 6rem;
+    height: 1.7rem;
+    margin-right: 25%;
+    margin-bottom: 2rem;
+  }
+
+  #cancel-button {
+    width: 6rem;
+    margin-left: 25%;
+    margin-bottom: 2rem;
+  }
+
+  #confirm-modal {
+    width: 50%;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #text-confirm {
+    margin-top: 3%;
+    margin-bottom: 6%;
   }
 }
 
