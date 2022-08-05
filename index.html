@@ -18,6 +18,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="row">
+    <div id="modal" class="dark-modal hidden">
+      <div id="confirm-modal">
+        <div id="text-confirm" class="row">ARE YOU SURE YOU WANT TO DELETE THIS?</div>
+        <div class="row space-between">
+          <button id="cancel-button" type="button">CANCEL</button>
+          <button id="confirm-button">CONFIRM</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="list" class="">
     <header>
       <div class="container-header">
@@ -54,8 +65,8 @@
             </div>
           </div>
           <div class="button-details-page row">
-            <button class="back">BACK</button>
-            <button class="add-review-button">ADD REVIEW</button>
+            <button class="back" type="button">BACK</button>
+            <button class="add-review-button" type="button">ADD REVIEW</button>
           </div>
         </div>
         <div id="review-page" data-view="review-page" class="hidden">
@@ -66,7 +77,8 @@
                   <h2 class="review-film row" id="margin-bottom-h2"></h2>
                   <img class="review-img" src="">
                   <textarea class="review-text" rows="3" placeholder="Write your review..."></textarea>
-                  <div class="align-button row">
+                  <div class="space-between baseline row">
+                    <button id="delete-button" type="button" class="visibility-hidden">DELETE</button>
                     <button id="submit-review-button" type="submit">SUBMIT</button>
                   </div>
                 </form>

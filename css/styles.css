@@ -132,9 +132,54 @@ h1 {
   font-weight: 500;
 }
 
-#edit-button {
+.edit-button {
   font-family: Quicksand, sans-serif;
   color: white;
   background-color: #405880;
   border: none;
+}
+
+.dark-modal {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#confirm-modal {
+  background-color: white;
+}
+
+#text-confirm {
+  justify-content: center;
+  font-family: Quicksand, sans-serif;
+  font-weight: bold;
+}
+
+#cancel-button {
+  font-family: Quicksand, sans-serif;
+  background-color: #405880;
+  color: white;
+  border: none;
+}
+
+#confirm-button {
+  background-color: #dc2626;
+  border: none;
+  color: white;
+  font-family: Quicksand, sans-serif;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+#delete-button {
+  color: white;
+  border: none;
+  font-family: Quicksand, sans-serif;
 }
