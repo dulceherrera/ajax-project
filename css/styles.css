@@ -1,7 +1,50 @@
-header {
+header,
+.detail-box,
+.back,
+#submit-review-button,
+.add-review-button,
+.edit-button,
+#cancel-button {
   color: white;
-  font-family: Quicksand, sans-serif;
   background-color: #405880;
+}
+
+li,
+header,
+.back,
+#submit-review-button,
+h1,
+.add-review-button,
+.edit-button,
+#text-confirm,
+#cancel-button,
+#confirm-button,
+#delete-button {
+  font-family: Quicksand, sans-serif;
+}
+
+.back,
+#submit-review-button,
+.add-review-button,
+.edit-button,
+#cancel-button,
+#delete-button,
+#confirm-button {
+  border: none;
+}
+
+#delete-button,
+#confirm-button,
+.text-p,
+a,
+h2, {
+  color: white;
+}
+
+h1,
+.container-green,
+#text-confirm {
+  justify-content: center;
 }
 
 img {
@@ -10,17 +53,18 @@ img {
   cursor: pointer;
 }
 
-.text-p {
-  color: white;
+.text-p,
+h2,
+.h1-no-reviews {
   font-family: "Josefin Sans", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
 
-.align-items {
+.align-items,
+.container-green {
   align-items: center;
 }
 
@@ -28,19 +72,14 @@ a {
   text-align: center;
 }
 
-#films-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.list-tab {
+.list-tab,
+textarea,
+#text-confirm {
   font-weight: bold;
 }
 
 .container-green {
   background-color: #6e9553;
-  justify-content: center;
-  align-items: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   font-weight: bolder;
@@ -48,8 +87,6 @@ a {
 
 h2 {
   background-color: #6e9553;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
 }
 
 .taviraj {
@@ -57,13 +94,7 @@ h2 {
   text-align: justify;
 }
 
-li {
-  font-family: Quicksand, sans-serif;
-}
-
 .detail-box {
-  background-color: #405880;
-  color: white;
   font-weight: 100;
   margin-top: 2rem;
 }
@@ -74,33 +105,16 @@ ul {
   padding-left: 1rem;
 }
 
-.back {
-  border: none;
-  background-color: #405880;
-  color: white;
-  font-family: Quicksand, sans-serif;
-}
-
 textarea {
   width: 100%;
   border: solid 3px black;
   font-family: Taviraj, serif;
-  font-weight: bold;
   font-size: 1.2rem;
 }
 
 #submit-review-button {
-  background-color: #405880;
-  color: white;
-  border: none;
   width: 5rem;
   height: 1.5rem;
-  font-family: Quicksand, sans-serif;
-}
-
-h1 {
-  font-family: Quicksand, sans-serif;
-  justify-content: center;
 }
 
 #p-reviews {
@@ -120,23 +134,8 @@ h1 {
   justify-content: space-between;
 }
 
-.add-review-button {
-  background-color: #405880;
-  color: white;
-  border: none;
-  font-family: Quicksand, sans-serif;
-}
-
 .h1-no-reviews {
-  font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
-}
-
-.edit-button {
-  font-family: Quicksand, sans-serif;
-  color: white;
-  background-color: #405880;
-  border: none;
 }
 
 .dark-modal {
@@ -150,24 +149,8 @@ h1 {
   background-color: white;
 }
 
-#text-confirm {
-  justify-content: center;
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
-}
-
-#cancel-button {
-  font-family: Quicksand, sans-serif;
-  background-color: #405880;
-  color: white;
-  border: none;
-}
-
 #confirm-button {
   background-color: #dc2626;
-  border: none;
-  color: white;
-  font-family: Quicksand, sans-serif;
 }
 
 .visibility-hidden {
@@ -176,10 +159,4 @@ h1 {
 
 .space-between {
   justify-content: space-between;
-}
-
-#delete-button {
-  color: white;
-  border: none;
-  font-family: Quicksand, sans-serif;
 }

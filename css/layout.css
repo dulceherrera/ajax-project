@@ -20,6 +20,11 @@ header {
   height: 3.3rem;
 }
 
+#films-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .margin-top-bottom {
   margin: 1rem auto;
 }
