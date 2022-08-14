@@ -68,8 +68,9 @@ a {
   align-items: center;
 }
 
-.text-center {
-  text-align: center;
+h2,
+.container-green, {
+  background-color: rgb(110, 149, 83);
 }
 
 .list-tab,
