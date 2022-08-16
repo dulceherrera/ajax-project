@@ -1,14 +1,3 @@
-header,
-.detail-box,
-.back,
-#submit-review-button,
-.add-review-button,
-.edit-button,
-#cancel-button {
-  color: white;
-  background-color: #405880;
-}
-
 li,
 header,
 .back,
@@ -27,30 +16,31 @@ h1,
 #submit-review-button,
 .add-review-button,
 .edit-button,
-#cancel-button,
-#delete-button,
-#confirm-button {
+#cancel-button {
   border: none;
-}
-
-#delete-button,
-#confirm-button,
-.text-p,
-a,
-h2, {
+  background-color: #405880;
   color: white;
 }
 
-h1,
-.container-green,
-#text-confirm {
-  justify-content: center;
+header,
+textarea {
+  font-size: 1.2rem;
+}
+
+header,
+.detail-box {
+  color: white;
+  background-color: #405880;
 }
 
 img {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   cursor: pointer;
+}
+
+.text-p,
+a,
+h2 {
+  color: white;
 }
 
 .text-p,
@@ -68,30 +58,38 @@ a {
   align-items: center;
 }
 
-h2,
-.container-green, {
-  background-color: rgb(110, 149, 83);
+.text-center {
+  text-align: center;
 }
 
 .list-tab,
+.container-green,
 textarea,
 #text-confirm {
   font-weight: bold;
 }
 
-.container-green {
-  background-color: #6e9553;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-weight: bolder;
-}
-
+.container-green,
 h2 {
   background-color: #6e9553;
 }
 
-.taviraj {
+h2,
+#p-reviews {
+  font-size: 1rem;
+}
+
+.text-p {
+  font-size: 0.8rem;
+}
+
+.taviraj,
+textarea,
+#p-reviews {
   font-family: Taviraj, serif;
+}
+
+.taviraj {
   text-align: justify;
 }
 
@@ -104,39 +102,64 @@ ul {
   list-style: none;
   line-height: 1.5rem;
   padding-left: 1rem;
+  font-size: 0.8rem;
+  width: 90%;
+  margin: auto;
 }
 
 textarea {
   width: 100%;
   border: solid 3px black;
-  font-family: Taviraj, serif;
-  font-size: 1.2rem;
 }
 
-#submit-review-button {
+#submit-review-button,
+#delete-button {
   width: 5rem;
   height: 1.5rem;
 }
 
+h1 {
+  font-size: 1.6rem;
+}
+
 #p-reviews {
-  font-family: Taviraj, serif;
   margin-top: 0;
 }
 
-#h2-reviews {
+.h2-reviews {
   background-color: none;
+}
+
+.h2-reviews,
+#margin-bottom-h2,
+.container-green {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .marginli {
   margin-bottom: 4rem;
 }
 
-.button-details-page {
+.button-details-page,
+.space-between,
+.justify-content {
   justify-content: space-between;
+}
+
+.add-review-button {
+  font-weight: lighter;
 }
 
 .h1-no-reviews {
   font-weight: 500;
+  font-size: larger;
+}
+
+.edit-button,
+.add-review-button,
+.taviraj {
+  font-size: 0.7rem;
 }
 
 .dark-modal {
@@ -148,16 +171,60 @@ textarea {
 
 #confirm-modal {
   background-color: white;
+  font-size: 0.85rem;
 }
 
-#confirm-button {
-  background-color: #dc2626;
+#confirm-button,
+#delete-button {
+  background-color: #f41b0d;
+  border: none;
+  color: white;
 }
 
-.visibility-hidden {
-  visibility: hidden;
+#margin-bottom-h2 {
+  height: 2rem;
 }
 
-.space-between {
-  justify-content: space-between;
+.align-button {
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.justify-content-center,
+#text-confirm,
+.h2-reviews h1,
+.container-green {
+  justify-content: center;
+}
+
+#film-banner,
+img {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  #delete-button {
+    background-color: #405880;
+  }
+
+  h2,
+  .text-p {
+    font-size: 1.5rem;
+  }
+
+  header {
+    font-size: 1.6rem;
+  }
+
+  .taviraj {
+    font-size: 1rem;
+  }
+
+  .h2-reviews {
+    height: 2rem;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
