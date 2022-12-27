@@ -4,7 +4,7 @@ A web application for Studio Ghibli fans who want to make reviews of these movie
 
 ## Live Demo
 
-git@github.com:dulceherrera/ghibli-films.git
+https://dulceherrera.github.io/ghibli-films/
 
 ## Technologies Used
 
