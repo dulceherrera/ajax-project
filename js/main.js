@@ -238,7 +238,8 @@ function createReviewList(review) {
   var $titleElement = document.createElement('h2');
   $titleElement.textContent = review.title;
   $titleElement.setAttribute('class', 'row');
-  $titleElement.setAttribute('id', 'h2-reviews film-title');
+  $titleElement.setAttribute('class', 'h2-reviews');
+  $titleElement.setAttribute('id', 'film-title');
   $liElement.appendChild($titleElement);
 
   var $ImgElement = document.createElement('img');

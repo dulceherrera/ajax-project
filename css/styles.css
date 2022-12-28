@@ -1,26 +1,60 @@
-header {
-  color: white;
+li,
+header,
+.back,
+#submit-review-button,
+h1,
+.add-review-button,
+.edit-button,
+#text-confirm,
+#cancel-button,
+#confirm-button,
+#delete-button {
   font-family: Quicksand, sans-serif;
+}
+
+.back,
+#submit-review-button,
+.add-review-button,
+.edit-button,
+#cancel-button {
+  border: none;
+  background-color: #405880;
+  color: white;
+}
+
+header,
+textarea {
+  font-size: 1.2rem;
+}
+
+header,
+.detail-box {
+  color: white;
   background-color: #405880;
 }
 
 img {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   cursor: pointer;
 }
 
-.text-p {
+.text-p,
+a,
+h2 {
   color: white;
+}
+
+.text-p,
+h2,
+.h1-no-reviews {
   font-family: "Josefin Sans", sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
 
-.align-items {
+.align-items,
+.container-green {
   align-items: center;
 }
 
@@ -28,42 +62,38 @@ a {
   text-align: center;
 }
 
-#films-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.list-tab {
+.list-tab,
+.container-green,
+textarea,
+#text-confirm {
   font-weight: bold;
 }
 
-.container-green {
-  background-color: #6e9553;
-  justify-content: center;
-  align-items: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-weight: bolder;
-}
-
+.container-green,
 h2 {
   background-color: #6e9553;
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
+}
+
+h2,
+#p-reviews {
+  font-size: 1rem;
+}
+
+.text-p {
+  font-size: 0.8rem;
+}
+
+.taviraj,
+textarea,
+#p-reviews {
+  font-family: Taviraj, serif;
 }
 
 .taviraj {
-  font-family: Taviraj, serif;
   text-align: justify;
 }
 
-li {
-  font-family: Quicksand, sans-serif;
-}
-
 .detail-box {
-  background-color: #405880;
-  color: white;
   font-weight: 100;
   margin-top: 2rem;
 }
@@ -72,71 +102,64 @@ ul {
   list-style: none;
   line-height: 1.5rem;
   padding-left: 1rem;
-}
-
-.back {
-  border: none;
-  background-color: #405880;
-  color: white;
-  font-family: Quicksand, sans-serif;
+  font-size: 0.8rem;
+  width: 90%;
+  margin: auto;
 }
 
 textarea {
   width: 100%;
   border: solid 3px black;
-  font-family: Taviraj, serif;
-  font-weight: bold;
-  font-size: 1.2rem;
 }
 
-#submit-review-button {
-  background-color: #405880;
-  color: white;
-  border: none;
+#submit-review-button,
+#delete-button {
   width: 5rem;
   height: 1.5rem;
-  font-family: Quicksand, sans-serif;
 }
 
 h1 {
-  font-family: Quicksand, sans-serif;
-  justify-content: center;
+  font-size: 1.6rem;
 }
 
 #p-reviews {
-  font-family: Taviraj, serif;
   margin-top: 0;
 }
 
-#h2-reviews {
+.h2-reviews {
   background-color: none;
+}
+
+.h2-reviews,
+#margin-bottom-h2,
+.container-green {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .marginli {
   margin-bottom: 4rem;
 }
 
-.button-details-page {
+.button-details-page,
+.space-between,
+.justify-content {
   justify-content: space-between;
 }
 
 .add-review-button {
-  background-color: #405880;
-  color: white;
-  border: none;
-  font-family: Quicksand, sans-serif;
+  font-weight: lighter;
 }
 
 .h1-no-reviews {
-  font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
+  font-size: larger;
 }
 
-.edit-button {
-  font-family: Quicksand, sans-serif;
-  color: white;
-  background-color: #405880;
-  border: none;
+.edit-button,
+.add-review-button,
+.taviraj {
+  font-size: 0.7rem;
 }
 
 .dark-modal {
@@ -148,38 +171,60 @@ h1 {
 
 #confirm-modal {
   background-color: white;
+  font-size: 0.85rem;
 }
 
-#text-confirm {
-  justify-content: center;
-  font-family: Quicksand, sans-serif;
-  font-weight: bold;
-}
-
-#cancel-button {
-  font-family: Quicksand, sans-serif;
-  background-color: #405880;
-  color: white;
-  border: none;
-}
-
-#confirm-button {
-  background-color: #dc2626;
-  border: none;
-  color: white;
-  font-family: Quicksand, sans-serif;
-}
-
-.visibility-hidden {
-  visibility: hidden;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
+#confirm-button,
 #delete-button {
-  color: white;
+  background-color: #f41b0d;
   border: none;
-  font-family: Quicksand, sans-serif;
+  color: white;
+}
+
+#margin-bottom-h2 {
+  height: 2rem;
+}
+
+.align-button {
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.justify-content-center,
+#text-confirm,
+.h2-reviews h1,
+.container-green {
+  justify-content: center;
+}
+
+#film-banner,
+img {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  #delete-button {
+    background-color: #405880;
+  }
+
+  h2,
+  .text-p {
+    font-size: 1.5rem;
+  }
+
+  header {
+    font-size: 1.6rem;
+  }
+
+  .taviraj {
+    font-size: 1rem;
+  }
+
+  .h2-reviews {
+    height: 2rem;
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
